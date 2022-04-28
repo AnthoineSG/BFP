@@ -1,0 +1,30 @@
+{
+  "name": "BIG_FAT_PROJET",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthoineSG/bigfatprojet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthoineSG/bigfatprojet/issues"
+  },
+  "homepage": "https://github.com/AnthoineSG/bigfatprojet#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dayjs": "^1.11.1",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  }
+}
