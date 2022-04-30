@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const router = require("./app/router");
+const router = require("./app/route");
 
 app.set("view engine", "ejs");
 app.set("views", "./app/views");

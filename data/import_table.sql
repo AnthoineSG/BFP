@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS "product" (
     "user_id" INT NOT NULL REFERENCES "user" ("id"),
     "function_id" INT NOT NULL REFERENCES "function" ("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT Now(),
-    "uptaded_at" TIMESTAMPTZ
+    "updated_at" TIMESTAMPTZ
 );
 
 CREATE TABLE IF NOT EXISTS "product_has_category" (

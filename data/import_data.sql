@@ -1,3 +1,4 @@
+
 BEGIN;
 
 INSERT INTO "user" ("firstname", "lastname", "email", "password")
@@ -79,8 +80,5 @@ VALUES
 ( 9, 3),
 ( 10, 2),
 ( 11, 1);
-
-
-
 
 COMMIT;
