@@ -1,5 +1,37 @@
 # Bienvenue sur mon Grand et Gros Projet
 
+## Pour bien lire les fichiers
+
+###### Extention vsc
+
+> Better Comments
+> indent-rainbaw
+> vscode-icons
+
+###### Les fichier commenter sont
+
+```txt
+.
+├── index.js
+└── app
+    ├── controller
+    │   └── productController.js
+    ├── models
+    │   ├── getConnexion.js
+    │   ├── index.js
+    │   └── product.js
+    └── route
+        └── index.js
+```
+
+- ctrl+j (pour ouvrir le terminal)
+
+```bash
+npm install
+
+npm run dev
+```
+
 ## Ojectif
 
 - HTML
