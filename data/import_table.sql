@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS "user" (
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT Now(),
-    "uptaded_at" TIMESTAMPTZ
+    "updated_at" TIMESTAMPTZ
 );
 
 CREATE TABLE IF NOT EXISTS "function" (

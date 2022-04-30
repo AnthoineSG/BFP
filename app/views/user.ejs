@@ -2,15 +2,15 @@
 
     <header class="header">
         <div class="header__block">
-            <h1 class="header__block-title">Liste des Produits</h1>
+            <h1 class="header__block-title">Liste des users</h1>
         </div>
         <%- include("./component/nav")  %>
     </header>
 
     <main class="main__product">
         <div class="main__product-list">
-            <% products.forEach(product => { %>
-                <p><%= product.name %></p>
+            <% users.forEach(user => { %>
+                <p><%= user.firstname %></p>
             <% }); %>
         </div>
     </main>
