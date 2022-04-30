@@ -64,6 +64,7 @@ body {
 .nav__block{
     display: flex;
     justify-content: space-around;
+    flex-flow: row wrap;
 }
 .nav__block-link{
     font-size: 1.3rem;

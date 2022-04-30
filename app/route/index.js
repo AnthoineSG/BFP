@@ -11,8 +11,11 @@ router.get("/", (req, res) => {
 
 // ? route des produits
 router.get("/product", productController.getAllProduct);
+router.get("/product/function", productController.productWithFunction);
 
+//? route des categories
 router.get("/category", categoryController.getAllCategory);
+
 
 // ~ le router est exporter vers l'index du server
 module.exports = router;

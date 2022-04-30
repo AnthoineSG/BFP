@@ -10,13 +10,8 @@
     <main class="main__product">
         <div class="main__product-list">
             <% products.forEach(product => { %>
-                <p><%= product.name %></p>
-            <% }); %>
-        </div>
-        <div class="main__product-list">
-            <% categorys.forEach(category => { %>
-                <p><%= category.name %></p>
-            <% }); %>
+                <%= product.name %> 
+            <% }) %>
         </div>
     </main>
 
