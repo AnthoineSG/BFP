@@ -12,6 +12,7 @@ function getConnexion() {
             },
             host: process.env.HOST,
             dialect: process.env.DB_ENV,
+            logging: true,
         }
     );
 }

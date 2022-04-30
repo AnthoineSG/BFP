@@ -1,9 +1,9 @@
 const { Sequelize, Model, DataTypes, literal } = require("sequelize");
 const sequelize = require("./getConnexion")();
 
-class Product extends Model {}
+class Category extends Model {}
 
-Product.init(
+Category.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,16 +12,14 @@ Product.init(
             primaryKey: true,
         },
         name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
         },
-        user_id: DataTypes.INTEGER,
-        function_id: DataTypes.INTEGER,
     },
     {
         sequelize: sequelize,
-        tableName: "product",
-        modelName: "Product",
+        tableName: "category",
+        modelName: "Category",
     }
 );
 
-module.exports = Product;
+module.exports = Category;
