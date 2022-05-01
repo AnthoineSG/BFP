@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const mainController = require("../controller/mainController");
 const productController = require("../controller/productController");
 const categoryController = require("../controller/categoryController");
 const functionController = require("../controller/functionController");
@@ -8,9 +9,7 @@ const placeController = require("../controller/placeController");
 const userController = require("../controller/userController");
 
 // ? route de la homePage
-router.get("/", (req, res) => {
-    res.render("homePage");
-});
+router.get("/", mainController.allProduct);
 
 // ? route des produits
 router.get("/product", productController.getAllProduct);

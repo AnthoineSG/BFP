@@ -11,10 +11,12 @@ const User = require("./user");
 //* function a rien
 //! un product "appartient a" une fonction
 Product.belongsTo(Function, {
+    as: "product_function",
     foreignKey: "function_id",
 });
 //! une function "a plusieurs" produits
 Function.hasMany(Product, {
+    as: "function_product",
     foreignKey: "function_id"
 });
 
@@ -23,10 +25,12 @@ Function.hasMany(Product, {
 //*user a un ou plusieur produit
 //! un produit "appartient a" utilisateur
 Product.belongsTo(User, {
+    as: "product_user",
     foreignKey: "user_id",
 });
 //! un user "a plusieur" produits
 User.hasMany(Product, {
+    as: "user_product",
     foreignKey: "user_id",
 });
 
@@ -35,12 +39,14 @@ User.hasMany(Product, {
 //* une piece a un ou plusieur produit
 //! un produit "appartient à beaucoup" de lieu
 Product.belongsToMany(Place, {
+    as: "product_place",
     through: "product_has_place",
     foreignKey: "place_id",
     otherKey: "product_id",
 });
 //! un lieu "appartient à beaucoup" de produits
 Place.belongsToMany(Product, {
+    as: "place_product",
     through: "product_has_place",
     foreignKey: "product_id",
     otherKey: "place_id",
@@ -51,12 +57,14 @@ Place.belongsToMany(Product, {
 //* une categorie a un ou plusieur produit
 //! un produit "appartient à beaucoup" de category
 Product.belongsToMany(Category, {
+    as: "product_category",
     through: "product_has_category",
     foreignKey: "category_id",
     otherKey: "product_id",
 });
 //! une categorie "appartient à beaucoup" de produits
 Category.belongsToMany(Product, {
+    as: "category_product",
     through: "product_has_category",
     foreignKey: "product_id",
     otherKey: "category_id",
