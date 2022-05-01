@@ -48,10 +48,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column;
 }
 .header__block-title {
     color: var(--color-fof);
     font-size: 5rem;
+}
+.header__block-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-orange);
 }
 /* ************************** *//* ****NAV*** *//* ************************** */
 .nav {

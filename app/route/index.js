@@ -40,13 +40,5 @@ router.get("/search", searchController.form);
 router.post("/search", searchController.getIdProduct);
 router.get("/searchProduct", searchController.resultSearch);
 
-/*
-
-faire une route 404
-
-se servir de dayjs pour la homePage et esssayer de rendre l'heure dynamique
-*/
-
-
 // ~ le router est exporter vers l'index du server
 module.exports = router;

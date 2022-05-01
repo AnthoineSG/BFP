@@ -1,4 +1,6 @@
-const { Product, Category, User } = require("../models");
+const { Product } = require("../models");
+
+const dayjs = require("dayjs");
 
 async function allProduct(req, res) {
     const products = await Product.findAll({
@@ -8,8 +10,10 @@ async function allProduct(req, res) {
         ],
         order: ["name"]
     });
-    // console.log(products);
-    res.render("homePage", { products });
+
+    const date = dayjs().format("[Nous somme le] DD/MM/YYYY [et il est] HH:mm");
+
+    res.render("homePage", { products, date });
 }
 
 module.exports = {
