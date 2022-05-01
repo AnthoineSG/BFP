@@ -26,13 +26,14 @@ router.get("/place", placeController.getAllPlace);
 
 //? route pour les user
 router.get("/user", userController.getAllUser);
-
+router.get("/user/form", userController.form);
+router.post("/user/form", userController.addUser);
+// router.get("/user/form", userController.addUser);
 
 /*
-faire une page avec tout les objet leur fonction/categorie/... sur la meme page
+faire un formulaire pour ajouter un user
 
 faire une route dinamique
-faire un formulaire pour ajouter un user
 faire un formulaire pour chercher un produit
 faire une route avec du js vanilla genre des alert et prompt moche et des boucle nul genre rentre un chiffre et je laffiche x fois
 

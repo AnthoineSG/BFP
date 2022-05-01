@@ -1,0 +1,25 @@
+<%- include("./partial/head")  %> 
+
+    <header class="header">
+        <div class="header__block">
+            <h1 class="header__block-title">Liste des Produits</h1>
+        </div>
+        <%- include("./component/nav")  %>
+    </header>
+
+    <main class="main__product">
+        <form action="/user/form" method="post">
+            <input type="text" placeholder="firstname" name="firstname">
+            <input type="text" placeholder="lastname" name="lastname">
+            <input type="text" placeholder="email" name="email">
+            <input type="text" placeholder="password" name="password">
+            <button type="submit">valider</button>
+        </form>
+
+    </main>
+
+    <footer class="footer">
+        <p>Orvoir</p>
+    </footer>
+
+<%- include("./partial/footer")  %> 

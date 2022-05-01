@@ -8,36 +8,16 @@
     </header>
     <main class="main">
 
-
-
-
     <% products.forEach(product => { %>
         <p>
-            <%= product.product_user.firstname.toUpperCase() %> utilise un.e <%= product.name.toUpperCase() %> pour <%= product.product_function.name.toUpperCase() %> 
+            <%= product.product_user.firstname.toUpperCase() %> 
+            utilise un.e <%= product.name.toUpperCase() %> 
+            pour <%= product.product_function.name.toUpperCase() %>
         </p>
         <br>
     <% }) %>
 
     <br>
-
-    <% users.forEach(user => { %>
-        <p>
-            <% user.user_product.forEach(product => { %>
-                <p><%= user.firstname.toUpperCase() %> a un.e <%= product.name.toUpperCase() %> qui a pour category: </p>
-            <% }); %>
-        </p>
-        <br>
-    <% }); %>
-
-
-
-
-
-
-
-
-
-
 
     </main>
     <footer class="footer">

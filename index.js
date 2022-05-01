@@ -10,6 +10,8 @@ app.set("views", "./app/views"); // ~ on set les vues ejs seront a la racine
 
 app.use(express.static("./public")); // * les fichier satatic seront directement a la racine "/"
 
+app.use(express.urlencoded({ extended: false }));
+
 app.use(router);
 
 const PORT = process.env.PORT; // ^ le port de l'application est a ecrire dans le fichier .env
