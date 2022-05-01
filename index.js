@@ -11,18 +11,18 @@ app.set("views", "./app/views"); // ~ on set les vues ejs seront a la racine
 
 app.use(express.static("./public")); // * les fichier satatic seront directement a la racine "/"
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); //! urlencoded permet de se servir de req.body (tout se qui est dans l'url (?toto=tata....))
 
-app.use(session({
-    secret: "secret of bfp",
+app.use(session({ //& on se sert des session pour appeller un cookie qui va suivre le visiteur
+    secret: "secret of bfp", //* on mets un secret au piff
     resave: false,
     saveUninitialized: true,
-    cookie: {
-        secure: false,
+    cookie: { //& le cookie
+        secure: false, //* false = http true = https
     }
 }));
 
-app.use((req, res, next) => {
+app.use((req, res, next) => { //! on defini ce qui se trouve dans l'objet de session
     req.session.vide = 0;
     // console.log(req.session);
     next();
