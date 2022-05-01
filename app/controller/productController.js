@@ -10,6 +10,15 @@ async function getAllProduct(req, res) {
     });
 }
 
+
+async function getOneProduct(req, res) {
+    const idProduct = req.params.id;
+    const oneProduct = await Product.findByPk(idProduct);
+    res.render("oneProduct", { oneProduct });
+}
+
+
+
 async function productWithFunction(req, res) {
     const products = await Product.findAll({ //? on recupere tout les produits
         where: { function_id: 1}, //? qui ont la fonction_id = 1 (manger)
@@ -22,5 +31,6 @@ async function productWithFunction(req, res) {
 // ~ les fichier exporter vont au router
 module.exports = {
     getAllProduct,
+    getOneProduct,
     productWithFunction,
 };

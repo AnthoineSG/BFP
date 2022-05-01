@@ -2,17 +2,18 @@ const express = require("express");
 const router = express.Router();
 
 const mainController = require("../controller/mainController");
+const userController = require("../controller/userController");
+const placeController = require("../controller/placeController");
 const productController = require("../controller/productController");
 const categoryController = require("../controller/categoryController");
 const functionController = require("../controller/functionController");
-const placeController = require("../controller/placeController");
-const userController = require("../controller/userController");
 
 // & route de la homePage
 router.get("/", mainController.allProduct);
 
 // & route des produits
 router.get("/product", productController.getAllProduct);
+router.get("/product/:id", productController.getOneProduct);
 router.get("/product/function", productController.productWithFunction);
 
 //& route des categories
@@ -28,11 +29,9 @@ router.get("/place", placeController.getAllPlace);
 router.get("/user", userController.getAllUser);
 router.get("/user/form", userController.form);
 router.post("/user/form", userController.addUser);
-// router.get("/user/form", userController.addUser);
 
 /*
 
-faire une route dinamique
 faire un formulaire pour chercher un produit
 faire une route avec du js vanilla genre des alert et prompt moche et des boucle nul genre rentre un chiffre et je laffiche x fois
 
