@@ -26,12 +26,16 @@ app.use((req, res, next) => { //! on defini ce qui se trouve dans l'objet de ses
     if (!req.session.idOfSearch) {
         req.session.idOfSearch = 0;
     }
-    // console.log(req.session);
     next();
 });
 
 
 app.use(router);
+
+
+app.use("*", (req, res) => {
+    res.render("404");
+});
 
 const PORT = process.env.PORT; // ^ le port de l'application est a ecrire dans le fichier .env
 app.listen(PORT, () => {
