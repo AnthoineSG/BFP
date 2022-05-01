@@ -110,6 +110,23 @@ body {
 .main__homePage-name {
     font-size: 1.2rem;
 }
+.clickme {
+    font-size: 5rem;
+}
+.pink {
+    animation: FoForever infinite 250ms;
+}
+@keyframes FoForever {
+    0% {
+        color: var(--color-fof);
+    }
+    50% {
+        color: var(--color-orange);
+    }
+    100% {
+        color: var(--color-fof);
+    }
+}
 /* ************************************************************************** */
 /* ************************** *//* **FOOTER** *//* ************************** */
 /* ************************************************************************** */

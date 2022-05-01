@@ -5,6 +5,7 @@ const mainController = require("../controller/mainController");
 const userController = require("../controller/userController");
 const placeController = require("../controller/placeController");
 const productController = require("../controller/productController");
+const vanillaController = require("../controller/vanillaController");
 const categoryController = require("../controller/categoryController");
 const functionController = require("../controller/functionController");
 
@@ -29,6 +30,9 @@ router.get("/place", placeController.getAllPlace);
 router.get("/user", userController.getAllUser);
 router.get("/user/form", userController.form);
 router.post("/user/form", userController.addUser);
+
+//& route demo js vanilla
+router.get("/vanilla", vanillaController.vanilla);
 
 /*
 
