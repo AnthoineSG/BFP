@@ -11,12 +11,11 @@
     <% products.forEach(product => { %>
         <p>
             <%= product.product_user.firstname.toUpperCase() %> 
-            utilise un.e <%= product.name.toUpperCase() %> 
+            utilise un.e  <a href="/product/<%= product.id %> "><%= product.name.toUpperCase() %></a>
             pour <%= product.product_function.name.toUpperCase() %>
         </p>
         <br>
     <% }) %>
-
     <br>
 
     </main>
