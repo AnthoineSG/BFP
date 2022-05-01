@@ -31,14 +31,12 @@ router.post("/user/form", userController.addUser);
 // router.get("/user/form", userController.addUser);
 
 /*
-faire un formulaire pour ajouter un user
 
 faire une route dinamique
 faire un formulaire pour chercher un produit
 faire une route avec du js vanilla genre des alert et prompt moche et des boucle nul genre rentre un chiffre et je laffiche x fois
 
 se servir des session
-se servir de req.body
 se servir de dayjs pour la homePage et esssayer de rendre l'heure dynamique
 se servire de bcrypt pour cripter les mdp en BDD
 */
