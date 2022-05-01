@@ -1,0 +1,21 @@
+<%- include("./partial/head")  %> 
+
+    <header class="header">
+        <div class="header__block">
+            <h1 class="header__block-title">Home Page</h1>
+        </div>
+        <%- include("./component/nav")  %> 
+    </header>
+    <main class="main">
+
+        <form action="/search" method="post">
+            <input type="text" placeholder="2" name="id" >
+            <button type="submit">valider</button>
+        </form>
+
+    </main>
+    <footer class="footer">
+        <p>Orvoir</p>
+    </footer>
+
+<%- include("./partial/footer")  %> 

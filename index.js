@@ -23,7 +23,9 @@ app.use(session({ //& on se sert des session pour appeller un cookie qui va suiv
 }));
 
 app.use((req, res, next) => { //! on defini ce qui se trouve dans l'objet de session
-    req.session.vide = 0;
+    if (!req.session.idOfSearch) {
+        req.session.idOfSearch = 0;
+    }
     // console.log(req.session);
     next();
 });
