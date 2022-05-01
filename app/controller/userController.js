@@ -31,7 +31,7 @@ async function addUser(req, res) {
 
     await newUser.save(); //& on envoie le mellange recuperer dans le formullaire vers la BDD
 
-    res.redirect("/user/form"); //^ on redirect sur une autre page pour faire jolie
+    res.redirect("/user"); //^ on redirect sur une autre page pour faire jolie
 }
 
 

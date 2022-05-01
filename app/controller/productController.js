@@ -1,5 +1,5 @@
 // ! on importe les fichiers (../models/index.js) permetant la connection a la bdd grace a sequelize
-const { Product, Function } = require("../models");
+const { Product, Function, Category, User, Place } = require("../models");
 
 async function getAllProduct(req, res) {
     // ^ on recupere tout les produit grace a la methode sequelize findAll qui fait (SELECT * FROM "product";)
@@ -19,13 +19,21 @@ async function getOneProduct(req, res) {
 
 
 
+// async function productWithFunction(req, res) {
+//     const products = await Product.findOne({ //? on recupere tout les produits
+//         where: { function_id: 1}, //? qui ont la fonction_id = 1 (manger)
+//         include: Function, //? et on appelle Function pour la liee a la table Product
+//     });
 async function productWithFunction(req, res) {
-    const products = await Product.findAll({ //? on recupere tout les produits
-        where: { function_id: 1}, //? qui ont la fonction_id = 1 (manger)
-        include: Function, //? et on appelle Function pour la liee a la table Product
-    });
-
-    res.render("productFunction", { products });
+    try {
+        const products = await Product.findAll({
+            where: { function_id: 1 },
+            include: "product_function",
+        });
+        res.render("productFunction", { products });
+    } catch (error) {
+        console.error("++++++++++++++++++++++++++++++++" + error);
+    }
 }
 
 // ~ les fichier exporter vont au router
