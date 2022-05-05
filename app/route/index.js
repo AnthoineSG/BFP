@@ -1,44 +1,29 @@
-const express = require("express");
-const router = express.Router();
+const { Router } = require("express");
+const router = Router();
 
-const mainController = require("../controller/mainController");
-const userController = require("../controller/userController");
-const placeController = require("../controller/placeController");
-const searchController = require("../controller/searchController");
-const productController = require("../controller/productController");
-const vanillaController = require("../controller/vanillaController");
-const categoryController = require("../controller/categoryController");
-const functionController = require("../controller/functionController");
+const mainRouter = require("./main");
+router.use("/", mainRouter);
 
-// & route de la homePage
-router.get("/", mainController.allProduct);
+const produitRouter = require("./product");
+router.use("/", produitRouter);
 
-// & route des produits
-router.get("/product", productController.getAllProduct);
-router.get("/product/:id", productController.getOneProduct);
-router.get("/product/sertpour/function", productController.productHasFunction);
+const categoryRouter = require("./category");
+router.use("/", categoryRouter);
 
-//& route des categories
-router.get("/category", categoryController.getAllCategory);
+const functionRouter = require("./function");
+router.use("/", functionRouter);
 
-//& route pour les function
-router.get("/function", functionController.getAllFunction);
+const placeRouter = require("./place");
+router.use("/", placeRouter);
 
-//&route pour les place
-router.get("/place", placeController.getAllPlace);
+const userRouter = require("./user");
+router.use("/", userRouter);
 
-//& route pour les user
-router.get("/user", userController.getAllUser);
-router.get("/user/form", userController.form);
-router.post("/user/form", userController.addUser);
+const vanillaRouter = require("./vanilla");
+router.use("/", vanillaRouter);
 
-//& route demo js vanilla
-router.get("/vanilla", vanillaController.vanilla);
-
-//& route de recherche de produit
-router.get("/search", searchController.form);
-router.post("/search", searchController.getIdProduct);
-router.get("/searchProduct", searchController.resultSearch);
+const searchRouter = require("./search");
+router.use("/", searchRouter);
 
 // ~ le router est exporter vers l'index du server
 module.exports = router;
