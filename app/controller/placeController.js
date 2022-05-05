@@ -5,6 +5,14 @@ async function getAllPlace(req, res) {
     res.render("place", { places });
 }
 
+async function placeById(req, res) {
+    const id = req.params.id;
+    const placeId = await Place.findByPk(id);
+
+    res.render("placeId", { placeId });
+}
+
 module.exports = {
     getAllPlace,
+    placeById,
 };
