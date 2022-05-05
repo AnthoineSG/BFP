@@ -16,7 +16,7 @@ router.get("/", mainController.allProduct);
 // & route des produits
 router.get("/product", productController.getAllProduct);
 router.get("/product/:id", productController.getOneProduct);
-router.get("/productWithFunction", productController.productWithFunction);
+router.get("/function", productController.productHasFunction);
 
 //& route des categories
 router.get("/category", categoryController.getAllCategory);
