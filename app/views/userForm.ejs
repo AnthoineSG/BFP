@@ -7,12 +7,16 @@
         <%- include("./component/nav")  %>
     </header>
 
+    <% if (locals.error) { %>
+        <p><%= error %></p>
+    <% } %>
+
     <main class="main__product">
         <form action="/user/form" method="post">
             <input type="text" placeholder="firstname" name="firstname">
             <input type="text" placeholder="lastname" name="lastname">
             <input type="text" placeholder="email" name="email">
-            <input type="text" placeholder="password" name="password">
+            <input type="password" placeholder="password" name="password">
             <button type="submit">Envoyer</button>
         </form>
 
