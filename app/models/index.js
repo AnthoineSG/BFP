@@ -1,10 +1,10 @@
 //! THE Place To Be pour tout les models qui ont des jointure
 //! on appelle tout les modells 1 par 1
-const Product = require("./product");
-const Category = require("./category");
-const Function = require("./function");
-const Place = require("./place");
-const User = require("./user");
+const Product = require("./tables/product");
+const Category = require("./tables/category");
+const Function = require("./tables/function");
+const Place = require("./tables/place");
+const User = require("./tables/user");
 
 //? association product et function
 //* product a function_id

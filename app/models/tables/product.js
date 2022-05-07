@@ -1,7 +1,7 @@
 //! on importe les objets de sequelize qui nous interesse pour cree notre instance
 const { Sequelize, Model, DataTypes, literal } = require("sequelize");
 //! on appelle la connection et ON OUBLIE PAS D'EXECUTER LA FONTION avec les () a la fin
-const sequelize = require("./getConnexion")();
+const sequelize = require("../connexion/getConnexion")();
 
 //? on intancie notre classe avec comme parent Model
 class Product extends Model {}

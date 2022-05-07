@@ -34,7 +34,7 @@ app.use(router);
 
 
 app.use("*", (req, res) => {
-    res.render("404");
+    res.render("error/404");
 });
 
 const PORT = process.env.PORT; // ^ le port de l'application est a ecrire dans le fichier .env

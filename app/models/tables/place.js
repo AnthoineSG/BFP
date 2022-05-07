@@ -1,15 +1,15 @@
-const { Sequelize, DataTypes, Model, literal } = require("sequelize");
-const sequelize = require("./getConnexion")();
+const { Model, DataTypes, literal } = require("sequelize");
+const sequelize = require("../connexion/getConnexion")();
 
-class Function extends Model {}
+class Place extends Model {}
 
-Function.init(
+Place.init(
     {
         id: {
             type: DataTypes.INTEGER,
             unique: true,
-            autoIncrement: true,
             primaryKey: true,
+            autoIncrement: true,
         },
         name: {
             type: DataTypes.STRING,
@@ -27,9 +27,9 @@ Function.init(
     },
     {
         sequelize,
-        modelName: "Function",
-        tableName: "function",
+        tableName: "place",
+        modelName: "Place",
     }
 );
 
-module.exports = Function;
+module.exports = Place;
