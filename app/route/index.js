@@ -1,28 +1,28 @@
 const { Router } = require("express");
 const router = Router();
 
-const mainRouter = require("./main");
+const mainRouter = require("./routes/main");
 router.use("/", mainRouter);
 
-const produitRouter = require("./product");
+const produitRouter = require("./routes/product");
 router.use("/", produitRouter);
 
-const categoryRouter = require("./category");
+const categoryRouter = require("./routes/category");
 router.use("/", categoryRouter);
 
-const functionRouter = require("./function");
+const functionRouter = require("./routes/function");
 router.use("/", functionRouter);
 
-const placeRouter = require("./place");
+const placeRouter = require("./routes/place");
 router.use("/", placeRouter);
 
-const userRouter = require("./user");
+const userRouter = require("./routes/user");
 router.use("/", userRouter);
 
-const vanillaRouter = require("./vanilla");
+const vanillaRouter = require("./routes/vanilla");
 router.use("/", vanillaRouter);
 
-const searchRouter = require("./search");
+const searchRouter = require("./routes/search");
 router.use("/", searchRouter);
 
 // ~ le router est exporter vers l'index du server
