@@ -7,21 +7,19 @@
         </div>
         <%- include("./component/nav")  %> 
     </header>
+
     <main class="main">
 
-    <% products.forEach(product => { %>
-        <p>
-            <%= product.product_user.firstname.toUpperCase() %> 
-            utilise un.e  <a href="/product/<%= product.id %> "><%= product.name.toUpperCase() %></a>
-            pour <%= product.product_function.name.toUpperCase() %>
-        </p>
+        <% products.forEach(product => { %>
+            <p>
+                <%= product.product_user.firstname.toUpperCase() %> 
+                utilise un.e  <a href="/product/<%= product.id %> "><%= product.name.toUpperCase() %></a>
+                pour <%= product.product_function.name.toUpperCase() %>
+            </p>
+            <br>
+        <% }) %>
         <br>
-    <% }) %>
-    <br>
 
     </main>
-    <footer class="footer">
-        <p>Orvoir</p>
-    </footer>
-
+<%- include("./partial/foot")  %> 
 <%- include("./partial/footer")  %> 

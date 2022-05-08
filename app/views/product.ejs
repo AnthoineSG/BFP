@@ -8,15 +8,13 @@
     </header>
 
     <main class="main__product">
+
         <div class="main__product-list">
             <% products.forEach(product => { %>
                 <p><%= product.name %></p>
             <% }); %>
         </div>
+
     </main>
-
-    <footer class="footer">
-        <p>Orvoir</p>
-    </footer>
-
+<%- include("./partial/foot")  %> 
 <%- include("./partial/footer")  %> 

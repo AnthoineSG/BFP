@@ -2,21 +2,19 @@
 
     <header class="header">
         <div class="header__block">
-            <h1 class="header__block-title">Liste des Produits</h1>
+            <h1 class="header__block-title">Liste des Categories</h1>
         </div>
         <%- include("./component/nav")  %>
     </header>
 
     <main class="main__product">
+
         <div class="main__product-list">
             <% categorys.forEach(category => { %>
                 <p><%= category.name %></p>
             <% }); %>
         </div>
+
     </main>
-
-    <footer class="footer">
-        <p>Orvoir</p>
-    </footer>
-
+<%- include("./partial/foot")  %> 
 <%- include("./partial/footer")  %> 

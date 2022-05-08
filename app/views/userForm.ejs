@@ -12,6 +12,7 @@
     <% } %>
 
     <main class="main__product">
+
         <form action="/user/form" method="post">
             <input type="text" placeholder="firstname" name="firstname">
             <input type="text" placeholder="lastname" name="lastname">
@@ -19,10 +20,7 @@
             <input type="password" placeholder="password" name="password">
             <button type="submit">Envoyer</button>
         </form>
+
     </main>
-
-    <footer class="footer">
-        <p>Orvoir</p>
-    </footer>
-
+<%- include("./partial/foot")  %> 
 <%- include("./partial/footer")  %> 

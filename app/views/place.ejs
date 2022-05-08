@@ -8,15 +8,13 @@
     </header>
 
     <main class="main__product">
+
         <div class="main__product-list">
             <% places.forEach(place => { %>
                 <a href="/place/where/<%= place.id %>"><%= place.name %></a>
             <% }); %>
         </div>
+
     </main>
-
-    <footer class="footer">
-        <p>Orvoir</p>
-    </footer>
-
+<%- include("./partial/foot")  %> 
 <%- include("./partial/footer")  %> 
