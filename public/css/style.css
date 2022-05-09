@@ -272,4 +272,33 @@ body {
     .main {
         padding: 5vh 2vh;
     }
+    .main__form-div{
+        width: 80%;
+        display: flex;
+        flex-flow: column;
+    }
+    .main__form-input {
+        width: 100%;
+    }
+    .main__form-button {
+        width: 50vw;
+    }
+}
+@media (min-width:500px) and (max-width:1100px) {
+    .header {
+        height: auto;
+    }    
+    .header__block {
+        height: auto;
+        padding: 5vh 2vw;
+    }
+    .header__block-title {
+        text-align: center;
+    }
+    .nav {
+        height: auto;
+    }
+    .main__form-button {
+        width: 25vw;
+    }
 }
