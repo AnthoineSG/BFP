@@ -1,8 +1,12 @@
 const { Place } = require("../models");
 
 async function getAllPlace(req, res) {
-    const places = await Place.findAll();
-    res.render("place", { places });
+    try {
+        const places = await Place.findAll();
+        res.render("place", { places });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 async function placeById(req, res) {
@@ -21,8 +25,6 @@ async function placeById(req, res) {
             res.render("placeId", { error: "L'id de ce lieux n'existe pas !", placeId: false });
             return;
         }
-
-
         res.render("placeId", { placeId });
     } catch (error) {
         console.error(error);

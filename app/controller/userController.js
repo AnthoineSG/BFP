@@ -4,8 +4,12 @@ const validator = require("validator");
 const { User } = require("../models");
 
 async function getAllUser(req, res) {
-    const users = await User.findAll();
-    res.render("user", { users });
+    try {
+        const users = await User.findAll();
+        res.render("user", { users });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 function form(req, res) {

@@ -2,25 +2,37 @@
 const { Product } = require("../models");
 
 async function getAllProduct(req, res) {
-    // ^ on recupere tout les produit grace a la methode sequelize findAll qui fait (SELECT * FROM "product";)
-    const allProduct = await Product.findAll();
-
-    res.render("product", { // & on passe nos resulta a la views
-        products: allProduct,
-    });
+    try {
+        // ^ on recupere tout les produit grace a la methode sequelize findAll qui fait (SELECT * FROM "product";)
+        const allProduct = await Product.findAll();
+    
+        res.render("product", { // & on passe nos resulta a la views
+            products: allProduct,
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 async function getOneProduct(req, res) {
-    const idProduct = req.params.id;
-    const oneProduct = await Product.findByPk(idProduct);
-    res.render("oneProduct", { oneProduct });
+    try {
+        const idProduct = req.params.id;
+        const oneProduct = await Product.findByPk(idProduct);
+        res.render("oneProduct", { oneProduct });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 async function productHasFunction(req, res) {
-    const products = await Product.findAll({
-        where: { function_id: 1 },
-    });
-    res.render("productFunction", { products });
+    try {
+        const products = await Product.findAll({
+            where: { function_id: 1 },
+        });
+        res.render("productFunction", { products });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 // ~ les fichier exporter vont au router

@@ -1,8 +1,12 @@
 const { Function } = require("../models");
 
 async function getAllFunction(req, res) {
-    const functions = await Function.findAll();
-    res.render("function", { functions });
+    try {
+        const functions = await Function.findAll();
+        res.render("function", { functions });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 module.exports = {
