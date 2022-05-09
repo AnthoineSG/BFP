@@ -1,0 +1,70 @@
+<%- include("./partial/head") %> 
+
+    <header class="header">
+        <div class="header__block">
+            <h1 class="header__block-title">Ajouter un nouveau produit</h1>
+        </div>
+        <%- include("./component/nav") %> 
+    </header>
+
+    <main class="main">
+
+        <% if (locals.error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <% if (locals.message) { %>
+            <p class="error"><%= message %></p>
+        <% } %>
+
+        <form class="main__form" action="/product/add/new" method="post">
+            <fieldset class="main__form-fieldset">
+                <legend class="main__form-legend">Les champs sont a remplire pour crée un nouveau produit</legend>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="name">Nom :</label>
+                    <input class="main__form-input" type="text" placeholder="Name" name="name" id="name">
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="user">Utilisateur :</label>
+                    <select class="main__form-input" name="user" id="user">
+                        <option value="">Choisir un utilisateur</option>
+                        <% users.forEach(user => { %>
+                            <option value="<%= user.id %>"><%= user.firstname %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="place">Lieux :</label>
+                    <select class="main__form-input" name="place" id="place">
+                        <option value="">Choisir un lieux</option>
+                        <% places.forEach(place => { %>
+                            <option value="<%= place.id %>"><%= place.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="category">Categorie :</label>
+                    <select class="main__form-input" name="category" id="category">
+                        <option value="">Choisir une categorie</option>
+                        <% categorys.forEach(category => { %>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="fonction">Fonction :</label>
+                    <select class="main__form-input" name="fonction" id="fonction">
+                        <option value="">Choisir un lieux</option>
+                        <% fonctions.forEach(fonction => { %>
+                            <option value="<%= fonction.id %>"><%= fonction.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="main__form-div-buttom">
+                    <button class="main__form-button" type="submit">Ajouter</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </main>
+<%- include("./partial/footer") %>
+<%- include("./partial/end") %>
