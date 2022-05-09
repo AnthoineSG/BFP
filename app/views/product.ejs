@@ -1,20 +1,20 @@
-<%- include("./partial/head")  %> 
+<%- include("./partial/head") %> 
 
     <header class="header">
         <div class="header__block">
             <h1 class="header__block-title">Liste des Produits</h1>
         </div>
-        <%- include("./component/nav")  %>
+        <%- include("./component/nav") %>
     </header>
 
-    <main class="main__product">
+    <main class="main">
 
-        <div class="main__product-list">
+        <div class="main__list">
             <% products.forEach(product => { %>
                 <p><%= product.name %></p>
             <% }); %>
         </div>
 
     </main>
-<%- include("./partial/foot")  %> 
-<%- include("./partial/footer")  %> 
+<%- include("./partial/footer") %>
+<%- include("./partial/end") %>

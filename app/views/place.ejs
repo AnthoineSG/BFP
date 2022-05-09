@@ -1,20 +1,20 @@
-<%- include("./partial/head")  %> 
+<%- include("./partial/head") %> 
 
     <header class="header">
         <div class="header__block">
             <h1 class="header__block-title">Liste des lieux</h1>
         </div>
-        <%- include("./component/nav")  %>
+        <%- include("./component/nav") %>
     </header>
 
-    <main class="main__product">
+    <main class="main">
 
-        <div class="main__product-list">
+        <div class="main__list">
             <% places.forEach(place => { %>
                 <a href="/place/where/<%= place.id %>"><%= place.name %></a>
             <% }); %>
         </div>
 
     </main>
-<%- include("./partial/foot")  %> 
-<%- include("./partial/footer")  %> 
+<%- include("./partial/footer") %>
+<%- include("./partial/end") %>

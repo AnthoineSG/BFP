@@ -1,17 +1,17 @@
-<%- include("./partial/head")  %> 
+<%- include("./partial/head") %> 
 
     <header class="header">
         <div class="header__block">
             <h1 class="header__block-title">Liste des Produits</h1>
         </div>
-        <%- include("./component/nav")  %>
+        <%- include("./component/nav") %>
     </header>
 
     <% if (locals.error) { %>
         <p><%= error %></p>
     <% } %>
 
-    <main class="main__product">
+    <main class="main">
 
         <form action="/user/form" method="post">
             <input type="text" placeholder="firstname" name="firstname">
@@ -22,5 +22,5 @@
         </form>
 
     </main>
-<%- include("./partial/foot")  %> 
-<%- include("./partial/footer")  %> 
+<%- include("./partial/footer") %>
+<%- include("./partial/end") %>
