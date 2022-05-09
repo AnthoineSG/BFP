@@ -2,15 +2,18 @@
 
     <header class="header">
         <div class="header__block">
-            <h1 class="header__block-title">Liste des lieux</h1>
+            <h1 class="header__block-title">Quand l'id est de <%= placeId.id %></h1>
         </div>
         <%- include("./component/nav") %>
     </header>
 
     <main class="main">
+        <p>Dans le/la <%= placeId.name %> on retrouve :</p>
 
         <div class="main__list">
-            <%= placeId.name %>
+            <% placeId.place_product.forEach(product => { %>
+                <p>un.e <%= product.name %></p> 
+            <% }) %>
         </div>
 
     </main>
