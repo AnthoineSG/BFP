@@ -4,20 +4,43 @@ function form(req, res) {
     res.render("search");
 }
 
-function getIdProduct (req, res) {
-    const idOfSearch = req.body.id;
-    req.session.idOfSearch = idOfSearch;
-    res.redirect("/searchProduct");
+async function getIdProduct (req, res) {
+    try {
+        if (!req.body.id) {
+            res.render("search", { error: "Il faut ecrire un nombre !"});
+            return;
+        }
+        const idOfSearch = parseInt(req.body.id);
+
+        if (!idOfSearch) {
+            res.render("search", { error: "C'est un nombre a ecrire !"});
+            return;
+        }
+
+        const idInBdd = await Product.findOne({ where: { id: idOfSearch } });
+        if (!idInBdd) {
+            res.render("search", { error: "L'id n'est pas en BDD !"});
+            return;
+        }
+
+        req.session.idOfSearch = idOfSearch;
+
+        res.redirect("/searchProduct");
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 async function resultSearch(req, res) {
-    const idSearch = req.session.idOfSearch;
-    console.log(idSearch);
-    const product = await Product.findByPk(idSearch);
+    try {
+        const idSearch = req.session.idOfSearch;
+        const product = await Product.findByPk(idSearch);
 
-    res.render("searchProduct", { product });
+        res.render("searchProduct", { product });
+    } catch (error) {
+        console.error(error);
+    }
 }
-
 
 module.exports = {
     form,
