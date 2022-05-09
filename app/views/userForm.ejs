@@ -2,23 +2,40 @@
 
     <header class="header">
         <div class="header__block">
-            <h1 class="header__block-title">Liste des Produits</h1>
+            <h1 class="header__block-title">Ajouter un membre</h1>
         </div>
         <%- include("./component/nav") %>
     </header>
 
-    <% if (locals.error) { %>
-        <p><%= error %></p>
-    <% } %>
-
     <main class="main">
 
-        <form action="/user/form" method="post">
-            <input type="text" placeholder="firstname" name="firstname">
-            <input type="text" placeholder="lastname" name="lastname">
-            <input type="text" placeholder="email" name="email">
-            <input type="password" placeholder="password" name="password">
-            <button type="submit">Envoyer</button>
+        <% if (locals.error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <form class="main__form" action="/user/form" method="post">
+            <fieldset class="main__form-fieldset">
+                <legend class="main__form-legend">Les champs sont a remplire pour acceder au reste du site</legend>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="firstname">Prenom :</label>
+                    <input class="main__form-input" type="text" placeholder="Firstname" name="firstname" id="firstname">
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="lastname">Nom :</label>
+                    <input class="main__form-input" type="text" placeholder="Lastname" name="lastname" id="lastname">
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="email">Adresse mail :</label>
+                    <input class="main__form-input" type="email" placeholder="Email" name="email" id="email">
+                </div>
+                <div class="main__form-div">
+                    <label class="main__form-label" for="password">Mots de passe :</label>
+                    <input class="main__form-input" type="password" placeholder="Password" name="password" id="password">
+                </div>
+                <div class="main__form-div-buttom">
+                    <button class="main__form-button" type="submit">S'inscrire</button>
+                </div>
+            </fieldset>
         </form>
 
     </main>

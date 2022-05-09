@@ -11,7 +11,7 @@
 
         <div class="main__list">
             <% places.forEach(place => { %>
-                <a href="/place/where/<%= place.id %>"><%= place.name %></a>
+                <a href="/place/where/<%= place.id %>" class="main__link"><%= place.name %></a>
             <% }); %>
         </div>
 
