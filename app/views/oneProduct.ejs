@@ -2,14 +2,20 @@
 
     <header class="header">
         <div class="header__block">
-            <h1 class="header__block-title">Home Page</h1>
+            <h1 class="header__block-title">Page d'un produit</h1>
         </div>
         <%- include("./component/nav") %> 
     </header>
 
     <main class="main">
 
-        <%= oneProduct.name %>
+        <% if (locals.error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <% if (!locals.error) { %>
+            <%= oneProduct.name %>
+        <% } %>
 
     </main>
 <%- include("./partial/footer") %>

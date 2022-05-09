@@ -5,13 +5,13 @@ function form(req, res) {
 }
 
 async function getIdProduct (req, res) {
-    try {
-        if (!req.body.id) {
-            res.render("search", { error: "Il faut ecrire un nombre !"});
-            return;
-        }
-        const idOfSearch = parseInt(req.body.id);
+    if (!req.body.id) {
+        res.render("search", { error: "Il faut ecrire un nombre !"});
+        return;
+    }
+    const idOfSearch = parseInt(req.body.id);
 
+    try {
         if (!idOfSearch) {
             res.render("search", { error: "C'est un nombre a ecrire !"});
             return;

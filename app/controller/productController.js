@@ -15,9 +15,18 @@ async function getAllProduct(req, res) {
 }
 
 async function getOneProduct(req, res) {
+    const idProduct = parseInt(req.params.id);
+    if (!idProduct) {
+        res.render("oneProduct", { error: "Les produits sont ranger par nombre !"});
+        return;
+    }
+
     try {
-        const idProduct = req.params.id;
         const oneProduct = await Product.findByPk(idProduct);
+        if (!oneProduct) {
+            res.render("oneProduct", { error: "Le produit choisie n'existe pas"});
+            return;
+        }
         res.render("oneProduct", { oneProduct });
     } catch (error) {
         console.error(error);
