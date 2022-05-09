@@ -6,14 +6,27 @@ async function getAllPlace(req, res) {
 }
 
 async function placeById(req, res) {
-    const id = req.params.id;
-    const placeId = await Place.findByPk(id, {
-        include: [
-            { association: "place_product" },
-        ]
-    });
+    try {
+        const id = parseInt(req.params.id);
+        if (!id) {
+            res.redirect("/");
+            return;
+        }
+        const placeId = await Place.findByPk(id, {
+            include: [
+                { association: "place_product" },
+            ]
+        });
+        if (!placeId) {
+            res.render("placeId", { error: "L'id de ce lieux n'existe pas !", placeId: false });
+            return;
+        }
 
-    res.render("placeId", { placeId });
+
+        res.render("placeId", { placeId });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 module.exports = {

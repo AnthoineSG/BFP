@@ -2,19 +2,28 @@
 
     <header class="header">
         <div class="header__block">
-            <h1 class="header__block-title">Quand l'id est de <%= placeId.id %></h1>
+            <% if (placeId) { %>
+                <h1 class="header__block-title">Quand l'id est de <%= placeId.id %></h1>
+            <% } %>
         </div>
         <%- include("./component/nav") %>
     </header>
 
     <main class="main">
-        <p>Dans le/la <%= placeId.name %> on retrouve :</p>
 
-        <div class="main__list">
-            <% placeId.place_product.forEach(product => { %>
-                <p>un.e <%= product.name %></p> 
-            <% }) %>
-        </div>
+        <% if (locals.error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <% if (placeId) { %>
+            <p>Dans le/la <%= placeId.name %> on retrouve :</p>
+    
+            <div class="main__list">
+                <% placeId.place_product.forEach(product => { %>
+                    <p>un.e <%= product.name %></p> 
+                <% }) %>
+            </div>
+        <% } %>
 
     </main>
 <%- include("./partial/footer") %>
